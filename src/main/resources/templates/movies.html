@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1>Ecco la lista dei film:</h1>
-<span th:text="${movies}"></span></h1>
+<!--For each-->
+<ul th:each="movie : ${movies}">
+    <li th:text="${movie}"></li>
+</ul>
+
 </body>
 </html>

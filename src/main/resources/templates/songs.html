@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>Ecco la lista delle canzoni:</h1>
-<span th:text="${songs}"></span></h1>
+<!--For each-->
+<ul th:each="song : ${songs}">
+    <li th:text="${song}"></li>
+</ul>
 </body>
 </html>
