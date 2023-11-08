@@ -7,9 +7,14 @@
 <body>
 <h1>Ecco la lista dei film:</h1>
 <!--For each-->
-<ul th:each="movie : ${movies}">
-    <li th:text="${movie}"></li>
+<ul>
+    <li th:each="movie : ${movies}">
+        <span th:text="|${movie.id} - ${movie.title}|"></span>
+        <a th:href="@{|/movies/${movie.id}|}">->
+        </a>
+    </li>
 </ul>
+<a th:href="@{/home}">Indietro</a>
 
 </body>
 </html>

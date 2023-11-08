@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Detail</title>
+</head>
+<body>
+<h1>Dettaglio canzone: </h1>
+<div th:text="|Id canzone: ${movie.id}|"></div>
+<div th:text="|Titolo: ${movie.title}|"></div>
+<a th:href="@{/movies}">Indietro</a>
+</body>
+</html>

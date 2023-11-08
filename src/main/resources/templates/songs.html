@@ -7,8 +7,13 @@
 <body>
 <h1>Ecco la lista delle canzoni:</h1>
 <!--For each-->
-<ul th:each="song : ${songs}">
-    <li th:text="${song}"></li>
+<ul>
+    <li th:each="song : ${songs}">
+        <span th:text="|${song.id} - ${song.title}|"></span>
+        <a th:href="@{|/songs/${song.id}|}">->
+        </a>
+    </li>
 </ul>
+<a th:href="@{/home}">Indietro</a>
 </body>
 </html>
