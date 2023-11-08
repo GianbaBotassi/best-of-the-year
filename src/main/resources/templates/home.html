@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
+<head th:replace="/fragments/resources :: headResources('Home')"></head>
 <body>
-<h1> Best of the year by
-    <span th:text="${nome}"></span>
-</h1>
-<a th:href="@{/songs}">Songs</a>
-<a th:href="@{/movies}">Movies</a>
+<section class="d-flex justify-content-center">
+    <div>
+        <nav th:replace="/fragments/navbar :: topNavbar('home')"></nav>
+        <h1 class="text-danger"> Best of by
+            <span th:text="${nome}"></span>
+        </h1>
+        <div class="d-flex justify-content-center">
+            <img style="width:300px" th:src="@{/musicaefilm.jpeg}">
+        </div>
+    </div>
+</section>
+<th:block th:replace="/fragments/resources :: jsResources"></th:block>
 </body>
 </html>

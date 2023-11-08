@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Movies</title>
-</head>
+<head th:replace="/fragments/resources :: headResources('Home')"></head>
 <body>
-<h1>Ecco la lista dei film:</h1>
-<!--For each-->
-<ul>
-    <li th:each="movie : ${movies}">
-        <span th:text="|${movie.id} - ${movie.title}|"></span>
-        <a th:href="@{|/movies/${movie.id}|}">->
-        </a>
-    </li>
-</ul>
-<a th:href="@{/home}">Indietro</a>
-
+<section class="d-flex justify-content-center">
+    <div>
+        <nav th:replace="/fragments/navbar :: topNavbar('movies')"></nav>
+        <ul>
+            <li th:each="movie : ${movies}">
+                <span th:text="|${movie.id} - ${movie.title}|"></span>
+                <a th:href="@{|/movies/${movie.id}|}">->
+                </a>
+            </li>
+        </ul>
+        <a th:href="@{/home}">Indietro</a>
+    </div>
+</section>
+<th:block th:replace="/fragments/resources :: jsResources"></th:block>
 </body>
 </html>
